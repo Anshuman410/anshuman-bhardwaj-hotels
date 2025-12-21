@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anshuman Bhardwaj Hotels | Jodhpur</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">Anshuman Bhardwaj Hotels</div>
+  <nav>
+    <a href="offers.html">Offers</a>
+    <a href="dining.html">Dining</a>
+    <a href="weddings.html">Weddings</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>JODHPUR</h1>
+    <p>Give Luxury That You Deserve</p>
+
+    <div class="booking-box">
+      <input type="date" id="checkIn">
+      <input type="date" id="checkOut">
+
+      <select id="roomType">
+        <option>Luxury</option>
+        <option>Super Luxury</option>
+        <option>Deluxe</option>
+      </select>
+
+      <select id="rooms">
+        <option>1 Room</option>
+        <option>2 Rooms</option>
+        <option>3 Rooms</option>
+      </select>
+
+      <button onclick="checkAvailability()">Check Availability</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOTEL LISTING ================= -->
+<section class="hotels">
+  <h2>Anshuman Bhardwaj Hotels</h2>
+
+  <div class="hotel-cards">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" />
+      <h3>Fortune Park Panchwati</h3>
+      <p>Luxury stay with royal Rajasthani hospitality.</p>
+      <div class="card-btns">
+        <button class="outline"
+          onclick="window.location.href='hotel-details.html?hotel=fortune'">
+          Explore
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6" />
+      <h3>Bhardwaj Palace</h3>
+      <p>Super luxury rooms with heritage architecture.</p>
+      <div class="card-btns">
+        <button class="outline"
+          onclick="window.location.href='hotel-details.html?hotel=bhardwaj'">
+          Explore
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div>
+    <h4>Contact</h4>
+    <p>Anshuman Bhardwaj Hotels, Jodhpur</p>
+    <p>📞 +91 9xxxxxx523</p>
+    <p>📧 anshumanbhardwajhotels@gmail.com</p>
+  </div>
+
+  <div>
+    <h4>Quick Links</h4>
+    <p>Privacy Policy</p>
+    <p>Terms & Conditions</p>
+    <p>Sitemap</p>
+  </div>
+
+  <div>
+    <h4>Follow Us</h4>
+    <p>Instagram</p>
+    <p>anshuman_hotels</p>
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+  function checkAvailability() {
+    const checkIn = document.getElementById("checkIn").value;
+    const checkOut = document.getElementById("checkOut").value;
+    const roomType = document.getElementById("roomType").value;
+    const rooms = document.getElementById("rooms").value;
+
+    if (!checkIn || !checkOut) {
+      alert("Please select check-in and check-out dates");
+      return;
+    }
+
+    window.location.href =
+      "booking.html?" +
+      "checkIn=" + checkIn +
+      "&checkOut=" + checkOut +
+      "&roomType=" + roomType +
+      "&rooms=" + rooms;
+  }
+</script>
+
+</body>
+</html>
