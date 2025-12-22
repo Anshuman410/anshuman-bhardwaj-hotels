@@ -8,7 +8,7 @@ const generateOtp = require("../utils/generateOtp");
 const transporter = require("../config/mailer");
 
 const router = express.Router();
-console.log("Sending OTP email to:", email);
+
 
 /* ======================
    REGISTER + SEND OTP
@@ -16,6 +16,8 @@ console.log("Sending OTP email to:", email);
 router.post("/register", async (req, res) => {
   try {
     const { name, email, mobile, password } = req.body;
+
+     console.log("Sending OTP email to:", email);
 
     if (!name || !email || !password) {
       return res.status(400).json({ message: "All required fields missing" });
@@ -158,4 +160,5 @@ router.post("/admin-login", async (req, res) => {
 });
 
 module.exports = router;
+
 
