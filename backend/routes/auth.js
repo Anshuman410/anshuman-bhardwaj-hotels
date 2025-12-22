@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const Otp = require("../models/Otp");
 const generateOtp = require("../utils/generateOtp");
-const transporter = require("../config/mailer");
+const sendOtpEmail = require("../config/mailer");
 
 const router = express.Router();
 
@@ -47,13 +47,9 @@ router.post("/register", async (req, res) => {
       otpHash,
       expiresAt: new Date(Date.now() + 5 * 60 * 1000)
     });
-
-    await transporter.sendMail({
-      from: "Anshuman Bhardwaj Hotels <anshumanbhardwajhotels@gmail.com>",
-      to: email,
-      subject: "Email Verification OTP",
-      text: `Your OTP is ${otp}. Valid for 5 minutes.`
-    });
+   
+     console.log("Sending OTP email to:", email);
+     await sendOtpEmail(email, otp);
 
     res.json({ message: "OTP sent to email" });
   } catch (err) {
@@ -160,5 +156,6 @@ router.post("/admin-login", async (req, res) => {
 });
 
 module.exports = router;
+
 
 
