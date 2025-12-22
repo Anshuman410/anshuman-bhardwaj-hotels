@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Admin Panel</div>
+  <nav>
+    <a href="#" onclick="adminLogout()">Logout</a>
+  </nav>
+</header>
+
+<section style="padding:40px;">
+  <h2>Welcome Admin</h2>
+  <p>This is the admin dashboard.</p>
+
+  <ul>
+    <li>✔️ View Registered Users</li>
+    <li>✔️ View Bookings</li>
+    <li>✔️ Manage Hotels</li>
+  </ul>
+
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Email Verified</th>
+      </tr>
+    </thead>
+    <tbody id="users"></tbody>
+  </table>
+</section>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
