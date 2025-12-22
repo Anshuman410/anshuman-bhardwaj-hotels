@@ -8,6 +8,7 @@ const generateOtp = require("../utils/generateOtp");
 const transporter = require("../config/mailer");
 
 const router = express.Router();
+console.log("Sending OTP email to:", email);
 
 /* ======================
    REGISTER + SEND OTP
@@ -157,3 +158,4 @@ router.post("/admin-login", async (req, res) => {
 });
 
 module.exports = router;
+
